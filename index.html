@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
+  <title>こんさんへ</title>
+  <style
+    .my-button {
+      visibility: hidden;
+      width: 50vw;
+      height: 10vw;
+      font-size: 24px;
+      animation: dropDown_2 1s ease
+      forwards;
+    }
+    .move-box {
+      visibility: hidden;
+      animation: dropDown_1 1s ease
+      forwards;
+    }
+    img.responsive-img {
+      width: 256px;
+      height: auto;
+    }
+    .animation-text{
+      display: block;
+      animation: dropDown 1s ease
+      forwards;
+      opacity: 0;
+    }
+  .second{
+    animation-delay: 1s;
+  }
+  .third {
+    animation-delay: 2s;
+  }
+  .fourth {
+    animation-delay: 3s;
+  }
+  .fifth {
+    animstion-delay: 4s;
+  }
+  @keyframes dropDown {
+    from {
+      transform: translateY(-50px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+    @media (max-width: 600px) {
+      body {
+        font-size: 32px;
+      }
+      img.responsive-img {
+        width: 128px;
+      }
+      .move-box {
+        visibility: hidden;
+        animastion: dropDown_1 1s ease
+        forwards;
+      }
+      .fourth {
+        animation-delay: 3s;
+      }.fifth {
+        animation-delay: 4s;
+      }
+      @keyframes dropDown_2 {
+        from {
+          transform: translateY(-150px);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(-50px);
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+      @keyframes dropDown_1 {
+        from {
+          transform: translateY(-150px);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(-50px);
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+    }
+    @media (min-width: 601px) and (max-width: 1024px) {
+        body {
+          font-size: 64px;
+        }
+        .my-button {
+          font-size: 64px;
+        }
+        .move-box {
+          visibility: hidden;
+          animation: dropDown_1 1s ease
+          forwards;
+        }
+        img.responsive-img {
+          width: 256px;
+        }
+        .fourth {
+          animation-delay: 3s;
+        }
+        .fifth {
+          animation-delay: 4s;
+        }
+        
+        @keyframes dropDown_2 {
+          from {
+            transform: translateY(-450px);
+            opacity: 0;
+          }
+          to {
+            transform: translateY(-350px);
+            opacity: 1;
+            visibility: visible;
+          }
+        }
+        @keyframes dropDown_1 {
+          from {
+            transform: translateY(-600px);
+            opacity: 0;
+          }
+          to {
+            transform: translateY(-500px);
+            opacity: 1;
+            visibility: visible;
+          }
+        }
+      }
+    }
+    .fade-target {
+      transform: opacity 1s ease;
+    }
+    .fade-out {
+      opacity: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="animation-text fade-target"><h2><CENTER> こんにちは </CENTER></h2></div>
+  <div class="animation-text second fade-target"><h2><CENTER> こんさん </CENTER></h2></div>
+  <div class="animation-text third fade-target"><h2><CENTER> かんくです </CENTER></h2></div>
+  <img class="fourth move-box responsive-img fade-target" src="sample.jpg"></img>
+  <CENTER><button class="fifth my-button" onclick="fadeOutAll()"> つきへ </button></CENTER>
+  <script>
+    function fadeOutAll() {
+      const items = 
+      document.querySelectorAll('.fade-target');
+            items.forEach(el =>
+      el.classList.add('fade-out'));
+    }
+  </script>
+</body>
+</html>
